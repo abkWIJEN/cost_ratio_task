@@ -1,25 +1,24 @@
 # cost_ratio_task
-<span style="color: #3498db;">Overview</span>
-This service calculates Market Value (FMV) and Auction Value (FLV) for a piece of equipment based on:
-Classification ID
-Model Year
+Overview
+  This service calculates Market Value (FMV) and Auction Value (FLV) for a piece of equipment based on:
+      Classification ID
+      Model Year
 
-The calculation is based on:
-Market Value  = Cost × Market Ratio
-Auction Value = Cost × Auction Ratio
+  The calculation is based on:
+      Market Value  = Cost × Market Ratio
+      Auction Value = Cost × Auction Ratio
 
-For Given Classification ID.
-Ratios vary by Model Year and Value Type (Market or Auction).
-If a Model Year does not exist in the depreciation schedule, default ratios are used.
-The service only supports Model Years between 2006 and 2020 (inclusive)
-
-Example
-Request GET /valuation/87390/2016
-Response {
-  "classificationId": "87390",
-  "modelYear": 2016,
-  "marketValue": 30008,
-  "auctionValue": 20426
+  For Given Classification ID.
+      Ratios vary by Model Year and Value Type (Market or Auction).
+      If a Model Year does not exist in the depreciation schedule, default ratios are used.
+      The service only supports Model Years between 2006 and 2020 (inclusive)
+  Example
+    Request GET /valuation/87390/2016
+    Response {
+      "classificationId": "87390",
+      "modelYear": 2016,
+      "marketValue": 30008,
+      "auctionValue": 20426
 }
 
 
