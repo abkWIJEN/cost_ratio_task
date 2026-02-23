@@ -1,4 +1,5 @@
 from app.data import DATA
+import re
 
 
 class EquipmentNotFound(Exception):
@@ -15,14 +16,15 @@ class EquipmentValuationService:
 
     @staticmethod
     def get_values(classification_id: str, model_year: int):
+        if classification_id not in DATA:
+            raise EquipmentNotFound("Classification ID not found.")
+
         if model_year < EquipmentValuationService.MIN_YEAR or model_year > EquipmentValuationService.MAX_YEAR:
             raise InvalidModelYear(
                 f"Model Year must be between {EquipmentValuationService.MIN_YEAR} "
                 f"and {EquipmentValuationService.MAX_YEAR}."
             )
 
-        if classification_id not in DATA:
-            raise EquipmentNotFound("Classification ID not found.")
 
         equipment = DATA[classification_id]
         cost = equipment["saleDetails"]["cost"]
@@ -39,6 +41,9 @@ class EquipmentValuationService:
 
         market_value = round(cost * market_ratio)
         auction_value = round(cost * auction_ratio)
+
+        market_value = "$"+re.sub(r"(\d)(?=(\d{3})+(?!\d))", r"\1,", str(market_value))
+        auction_value = "$"+re.sub(r"(\d)(?=(\d{3})+(?!\d))", r"\1,", str(auction_value))
 
         return {
             "classificationId": classification_id,
