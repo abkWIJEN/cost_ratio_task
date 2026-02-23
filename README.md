@@ -1,6 +1,6 @@
-# 📊 Cost Ratio Task
+# Cost Ratio Task
 
-A lightweight valuation service that calculates:
+This valuation service that calculates:
 
 - **Market Value (FMV)**
 - **Auction Value (FLV)**
@@ -12,11 +12,11 @@ Based on:
 
 ---
 
-## 📌 Overview
+##  Overview
 
 The service calculates equipment values using predefined depreciation ratios.
 
-### 📐 Formula
+###  Formula
 
 ```python
 Market Value  = Cost × Market Ratio
@@ -29,7 +29,7 @@ Auction Value = Cost × Auction Ratio
 
 ---
 
-## 🚀 Example
+##  Example
 
 ### Request
 
@@ -50,7 +50,7 @@ GET /valuation/87390/2016
 
 ---
 
-# 🏗 Architecture
+# Architecture
 
 ```
 app/
@@ -64,7 +64,7 @@ tests/
 
 ---
 
-# 🧠 Design Principles
+#  Design Principles
 
 - Separation of API and business logic  
 - Fully unit-testable service layer  
@@ -74,7 +74,7 @@ tests/
 
 ---
 
-# 📋 Business Rules
+#  Business Rules
 
 ## 1️⃣ Valid Model Year Range
 
@@ -106,7 +106,7 @@ Standard rounding is applied.
 
 ---
 
-# ⚙️ Installation
+#  Installation
 
 ## 1️⃣ Clone Repository
 
@@ -181,7 +181,7 @@ Expected:
 
 ---
 
-# ❗ Error Handling
+#  Error Handling
 
 ## Invalid Model Year
 
@@ -207,7 +207,7 @@ HTTP Status: `404`
 
 ---
 
-# 📝 Assumptions
+#  Assumptions
 
 - Book Cost does not change by Model Year  
 - If year not listed → default ratios apply  
@@ -216,7 +216,7 @@ HTTP Status: `404`
 
 ---
 
-# 🚀 Possible Enhancements
+#  Possible Enhancements
 
 - Replace static JSON with database or external API  
 - Add caching layer  
@@ -228,7 +228,7 @@ HTTP Status: `404`
 
 ---
 
-# 🛠 Tech Stack
+#  Tech Stack
 
 - Python 3.x  
 - FastAPI  
@@ -236,7 +236,7 @@ HTTP Status: `404`
 
 ---
 
-# 👨‍💻 Author Notes
+#  Author Notes
 
 This implementation prioritizes:
 
