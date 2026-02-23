@@ -147,7 +147,7 @@ pip install fastapi uvicorn pytest
 
 ---
 
-# ▶️ Running the Service
+#  Running the Service
 
 ```bash
 uvicorn app.main:app --reload
@@ -167,7 +167,7 @@ http://127.0.0.1:8000/docs
 
 ---
 
-# 🧪 Running Tests
+#  Running Tests
 
 ```bash
 pytest
